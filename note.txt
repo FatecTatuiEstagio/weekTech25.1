@@ -1,0 +1,1 @@
+background: linear-gradient(to bottom, rgb(19 173 0 / 80%), rgb(37 235 173 / 80%))
