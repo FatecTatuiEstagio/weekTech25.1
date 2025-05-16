@@ -71,7 +71,7 @@ const PalestraCard = ({ palestrante, foto, horario, curso, tema, descricao, loca
               <span className="bg-fatec-green text-white text-sm font-medium px-3 py-1 rounded">
                 {horario}
               </span>
-              <span className="bg-fatec-lightGray text-fatec-gray text-sm px-3 py-1 rounded">
+              <span className="bg-fatec-lightGray font-bold text-fatec-gray text-sm px-3 py-1 rounded">
                 {curso}
               </span>
             </div>

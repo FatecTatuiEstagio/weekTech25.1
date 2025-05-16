@@ -101,7 +101,7 @@ const dadosDiarios = {
       horario: "14h00",
       curso: "Automação Industrial",
       tema: "“Enquanto Você Toca”, bate-papo com autora do Livro",
-      descricao: "Empresa: Lincoln Eletric",
+      descricao: "Cantora do grupo Mawaca e atuou em muitos projetos de música eletrônica, jazz e contemporânea",
       local: "Local: Estúdio"
     },
     {
@@ -111,7 +111,7 @@ const dadosDiarios = {
         "./palestrantes/RosangelaAraujo.jpg",
       ],
       horario: "14h00",
-      curso: "Manutenção Industrial",
+      curso: "Processos Gerenciais",
       tema: "Equilíbrio e Carreira: A construção do Seu Melhor Perfil",
       descricao: `Maise: Parceira Comercial de Recursos Humnanos (HRBP) na Point Media.
                   Rosângela: Professora e coordenadora na UNISO e coordenadora na Fatec Tatuí.`,
@@ -132,10 +132,10 @@ const dadosDiarios = {
       palestrante: "Alexandre Azevedo",
       foto: "./palestrantes/AlexandreAzevedo.jpg",
       horario: "14h00",
-      curso: "Manutenção Industrial",
+      curso: "Produção Fonográfica",
       tema: "Soldagem em realidade virtual A revolução do Treinamento Técnico",
-      descricao: "Empresa: Lincoln Eletric",
-      local: "Local: Auditório 1 - Prédio 2"
+      descricao: "Lançou o primeiro livro sobre negócios de música do Brasil, em parceria com o Doutor em Direito, Nichollas Alem, com o título:\n40 Formas de Ganhar Dinheiro na Música: um guia descomplicado para artistas e bandas.",
+      local: "Estúdio"
     },
     {
       palestrante: "Weliton do Carmo Rodrigues",
@@ -158,23 +158,14 @@ const dadosDiarios = {
   ],
   sexta: [
     {
-      palestrante: "Roberto Alves",
-      foto: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      horario: "19h00",
-      curso: "Gestão Empresarial",
-      tema: "Empreendedorismo Tecnológico",
-      descricao: "Como criar e desenvolver startups de tecnologia no cenário atual.",
+      palestrante: "Point Media",
+      foto: "./palestrantes/gti.png",
+      horario: "8h - 19h",
+      curso: "Gestão da Tecnologia da Informação & Análise e Desenvolvimento de Sistemas",
+      tema: "Finalização do Ideathon (GTI e ADS)",
+      descricao: " ",
       local: "Local: Auditório 1 - Prédio 2"
     },
-    {
-      palestrante: "Fernanda Santos",
-      foto: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      horario: "20h30",
-      curso: "Análise e Desenvolvimento de Sistemas",
-      tema: "Carreira em TI: Tendências para 2026",
-      descricao: "Perspectivas e oportunidades na carreira de tecnologia para os próximos anos.",
-      local: "Local: Auditório 1 - Prédio 2"
-    }
   ]
 };
 
