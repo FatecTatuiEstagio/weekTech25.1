@@ -82,9 +82,9 @@ const Contato = () => {
                 <Card className="overflow-hidden">
                   <CardContent className="p-0">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.420777650265!2d-47.84971392376401!3d-23.554358361028504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c5cbf41c1867c9%3A0x92a928d51b1efc46!2sFatec%20Tatu%C3%AD%20-%20Faculdade%20de%20Tecnologia%20de%20Tatu%C3%AD!5e0!3m2!1spt-BR!2sbr!4v1699908120850!5m2!1spt-BR!2sbr" 
+                      src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Rod.%20M%C3%A1rio%20Batista%20Mori,%20971%20-%20Jardim%20Aeroporto,%20Tatu%C3%AD%20-%20SP,%2018280-000+(Fatec%20Tatu%C3%AD)&amp;t=k&amp;z=18&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" 
                       width="100%" 
-                      height="300" 
+                      height="600" 
                       style={{ border: 0 }} 
                       allowFullScreen={true} 
                       loading="lazy"
@@ -94,61 +94,7 @@ const Contato = () => {
                   </CardContent>
                 </Card>
               </div>
-
-              <div>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Envie uma Mensagem</h2>
-                
-                <Card>
-                  <CardContent className="p-6">
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div>
-                        <label htmlFor="nome" className="block text-sm font-medium text-gray-700 mb-1">
-                          Nome Completo
-                        </label>
-                        <Input
-                          id="nome"
-                          value={nome}
-                          onChange={(e) => setNome(e.target.value)}
-                          placeholder="Seu nome completo"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
-                          E-mail
-                        </label>
-                        <Input
-                          id="email"
-                          type="email"
-                          value={email}
-                          onChange={(e) => setEmail(e.target.value)}
-                          placeholder="seu.email@exemplo.com"
-                          required
-                        />
-                      </div>
-                      
-                      <div>
-                        <label htmlFor="mensagem" className="block text-sm font-medium text-gray-700 mb-1">
-                          Mensagem
-                        </label>
-                        <Textarea
-                          id="mensagem"
-                          value={mensagem}
-                          onChange={(e) => setMensagem(e.target.value)}
-                          placeholder="Escreva sua mensagem aqui..."
-                          rows={5}
-                          required
-                        />
-                      </div>
-                      
-                      <Button type="submit" className="w-full bg-fatec-green hover:bg-fatec-lightGreen">
-                        Enviar Mensagem
-                      </Button>
-                    </form>
-                  </CardContent>
-                </Card>
-              </div>
+              
             </div>
           </div>
         </section>

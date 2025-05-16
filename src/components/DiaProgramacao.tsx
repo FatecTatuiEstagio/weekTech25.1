@@ -21,57 +21,139 @@ const dadosDiarios = {
   segunda: [
     {
       palestrante: "Marcelo Marques e William Galvão",
-      foto: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      foto: [
+        "./palestrantes/Will Galva.jpg",
+        "./palestrantes/Leo Fernandes.jpg"
+      ],
       horario: "8h00",
       curso: "Gestão da Tecnologia da Informação",
       tema: "Ideathon, Startups e Inovação",
-      descricao: "Empresa: Point Media"
+      descricao: "Empresa: Point Media",
+      local: "Local: Auditório 1 - Prédio 2"
     },
     {
       palestrante: "Marcelo Marques e William Galvão",
-      foto: "https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      foto: [
+        "./palestrantes/Will Galva.jpg",
+        "./palestrantes/Leo Fernandes.jpg"
+      ],
+      horario: "14h00",
+      curso: "Análise e Desenvolvimento de Sistemas",
+      tema: "Ideathon, Startups e Inovação",
+      descricao: "Empresa: Point Media",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Marcelo Marques e William Galvão",
+      foto: [
+        "./palestrantes/Will Galva.jpg",
+        "./palestrantes/Leo Fernandes.jpg"
+      ],
       horario: "19h00",
       curso: "Gestão da Tecnologia da Informação",
       tema: "Ideathon, Startups e Inovação",
-      descricao: "Empresa: Point Media"
+      descricao: "Empresa: Point Media",
+      local: "Local: Auditório 1 - Prédio 2"
     },
-    {
-      palestrante: "Carlos Mendes",
-      foto: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      horario: "20h30",
-      curso: "Análise e Desenvolvimento de Sistemas",
-      tema: "Segurança em Aplicações Web",
-      descricao: "Como implementar medidas de segurança eficazes em aplicações web modernas."
-    }
   ],
   terca: [
     {
-      palestrante: "Marina Lima",
-      foto: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      palestrante: "2° Colóquio de Automação Industrial",
+      foto: "./palestrantes/automacaoIndustrial.jpg",
+      horario: "08h30",
+      curso: "Automação Industrial",
+      tema: "Roda de Conversas com Egressos do curso de Automação Industrial",
+      descricao: "Empresa: Lincoln Eletric",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Paulo Assis",
+      foto: "./palestrantes/PauloAssis.jpg",        
+      horario: "14h00",
+      curso: "Produção Fonográfica",
+      tema: "Mixando com fones: uma abordagem binaural",
+      descricao: "Artista sonoro, produtor e engenheiro de mixagem e masterização\n Mestre em Artes pela Escola de Comunicação e Artes da USP",
+      local: "Local: Estúdio"
+    },
+    {
+      palestrante: "2° Colóquio de Automação Industrial",
+      foto: "./palestrantes/automacaoIndustrial.jpg",
       horario: "19h00",
-      curso: "Gestão Empresarial",
-      tema: "Marketing Digital para Negócios",
-      descricao: "Estratégias de marketing digital para impulsionar negócios em 2025."
-    }
+      curso: "Automação Industrial",
+      tema: "Roda de Conversas com Egressos do curso de Automação Industrial",
+      descricao: "Empresa: JCB",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
   ],
   quarta: [
     {
-      palestrante: "Paulo Oliveira",
-      foto: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+      palestrante: "Hélio Silva",
+      foto: "./palestrantes/HelioSilva.jpg",
+      horario: "08h00",
+      curso: "Manutenção Industrial",
+      tema: "Soldagem em realidade virtual A revolução do Treinamento Técnico",
+      descricao: "Empresa: Lincoln Eletric",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Fabiana Lian",
+      foto: "./palestrantes/FabianaLian.jpg",
+      horario: "14h00",
+      curso: "Automação Industrial",
+      tema: "“Enquanto Você Toca”, bate-papo com autora do Livro",
+      descricao: "Empresa: Lincoln Eletric",
+      local: "Local: Estúdio"
+    },
+    {
+      palestrante: "Maise Rezende e Rosângela Araújo",
+      foto: [
+        "./palestrantes/MaiseRezende.jpg",
+        "./palestrantes/RosangelaAraujo.jpg",
+      ],
+      horario: "14h00",
+      curso: "Manutenção Industrial",
+      tema: "Equilíbrio e Carreira: A construção do Seu Melhor Perfil",
+      descricao: `Maise: Parceira Comercial de Recursos Humnanos (HRBP) na Point Media.
+                  Rosângela: Professora e coordenadora na UNISO e coordenadora na Fatec Tatuí.`,
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Eduardo Menezes",
+      foto: "./palestrantes/EduardoMenezes.png",
       horario: "19h00",
-      curso: "Análise e Desenvolvimento de Sistemas",
-      tema: "DevOps e Integração Contínua",
-      descricao: "Implementação de práticas DevOps para melhorar o ciclo de desenvolvimento."
+      curso: "Manutenção Industrial",
+      tema: "Planejamento da Manutenção Programada - Linha amarela da JCB",
+      descricao: "Empresa: JCB",
+      local: "Local: Auditório 1 - Prédio 2"
     }
   ],
   quinta: [
     {
-      palestrante: "Luciana Costa",
-      foto: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-      horario: "19h00",
-      curso: "Produção Industrial",
-      tema: "Indústria 4.0 e IoT",
-      descricao: "Como a Internet das Coisas está revolucionando a produção industrial."
+      palestrante: "Alexandre Azevedo",
+      foto: "./palestrantes/AlexandreAzevedo.jpg",
+      horario: "14h00",
+      curso: "Manutenção Industrial",
+      tema: "Soldagem em realidade virtual A revolução do Treinamento Técnico",
+      descricao: "Empresa: Lincoln Eletric",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Weliton do Carmo Rodrigues",
+      foto: "./palestrantes/Wellinton.jpg",
+      horario: "14h30",
+      curso: "Gestão Empresarial",
+      tema: "Incorporação de IA nas atividades do dia-a-dia",
+      descricao: "Pesquisador nas áreas de  Inteligência Artificial - FIT Flextronic Instituto de Tecnologia ",
+      local: "Local: Auditório 1 - Prédio 2"
+    },
+    {
+      palestrante: "Marina Lima",
+      foto: "./palestrantes/Jane Piantoni.jpg",
+      horario: "20h00",
+      curso: "Gestão Empresarial",
+      tema: "IA e os desafios futuros para o mundo corporativo",
+      descricao: "Pesquisadora nas áreas de  Inteligência Artificial - FIT Flextronic",
+      local: "Local: Auditório 1 - Prédio 2"
     }
   ],
   sexta: [
@@ -81,7 +163,8 @@ const dadosDiarios = {
       horario: "19h00",
       curso: "Gestão Empresarial",
       tema: "Empreendedorismo Tecnológico",
-      descricao: "Como criar e desenvolver startups de tecnologia no cenário atual."
+      descricao: "Como criar e desenvolver startups de tecnologia no cenário atual.",
+      local: "Local: Auditório 1 - Prédio 2"
     },
     {
       palestrante: "Fernanda Santos",
@@ -89,7 +172,8 @@ const dadosDiarios = {
       horario: "20h30",
       curso: "Análise e Desenvolvimento de Sistemas",
       tema: "Carreira em TI: Tendências para 2026",
-      descricao: "Perspectivas e oportunidades na carreira de tecnologia para os próximos anos."
+      descricao: "Perspectivas e oportunidades na carreira de tecnologia para os próximos anos.",
+      local: "Local: Auditório 1 - Prédio 2"
     }
   ]
 };
@@ -123,8 +207,8 @@ const DiaProgramacao = () => {
             
             {dadosDiarios[dia.valor as keyof typeof dadosDiarios].map((palestra, index) => (
               // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-              <PalestraCard key={index} {...palestra} />
-            ))}
+                <PalestraCard key={index} {...palestra} />
+          ))}
           </TabsContent>
         ))}
       </Tabs>
