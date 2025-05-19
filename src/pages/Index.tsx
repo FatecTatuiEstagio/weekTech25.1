@@ -41,9 +41,12 @@ const Index = () => {
         {/* Hero Section */}
         <section className="hero-section text-white py-20 md:py-32">
           <div className="container mx-auto px-6 md:px-8 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
-              4ª Semana de Tecnologia
-            </h1>
+            <div className='flex items-center justify-center text-center'>
+              <img className='w-1/4' src="logo.svg" alt="Loog da 4ª Semana de Tecnologia" />
+              <h1 className="text-4xl gap-1 items-center text-center justify-center flex md:text-6xl font-bold mb-4 animate-fade-in">
+                4ª Semana de Tecnologia
+              </h1>
+            </div>
             <h2 className="text-xl md:text-2xl font-medium mb-8 animate-fade-in">
               Fatec Tatuí - 12 a 16 de Maio de 2025
             </h2>
@@ -55,6 +58,8 @@ const Index = () => {
             </Link>
           </div>
         </section>
+
+        
 
         {/* Intro Section */}
         <section className="py-16 bg-white">
