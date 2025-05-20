@@ -91,35 +91,6 @@ const Index = () => {
             </div>
           </div>
         </section>
-
-        {/* Dias do Evento */}
-        <section className="py-16 bg-fatec-lightGray">
-          <div className="container mx-auto px-6 md:px-8">
-            <h2 className="text-3xl font-bold text-center mb-10">Programação por Dia</h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-              {diasEvento.map((dia, index) => (
-                <Link
-                  // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                  key={index}
-                  to={`/programacao?dia=${dia.id}`}
-                  className="group"
-                >
-                  <Card className="shadow-card h-full transition-all group-hover:border-fatec-green">
-                    <CardContent className="p-6 flex flex-col items-center text-center h-full">
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">{dia.dia}</h3>
-                      <p className="text-sm text-gray-600 mb-4">{dia.data}</p>
-                      <div className="mt-auto text-fatec-green flex items-center text-sm font-medium group-hover:underline">
-                        Ver palestras
-                        <ArrowRight className="ml-1 h-4 w-4" />
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
