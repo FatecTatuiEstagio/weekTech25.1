@@ -27,7 +27,10 @@ const Header = () => {
         <div className="flex justify-between items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center gap-2">
-              <span className="text-fatec-green font-bold text-xl sm:text-2xl">Fatec Tatuí</span>
+              <span className="flex items-center justify-start text-fatec-green font-bold text-xl sm:text-2xl">
+                <img className='w-1/12' src="logo.svg" alt="Loog da 4ª Semana de Tecnologia" />
+                Fatec Tatuí 
+              </span>
             </Link>
           </div>
 
