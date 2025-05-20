@@ -175,21 +175,21 @@ const DiaProgramacao = () => {
       <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Programação do Evento</h2>
       
       <Tabs defaultValue="segunda" className="w-full">
-        <TabsList className="grid grid-cols-2 md:grid-cols-5 mb-8">
-          {diasSemana.map(dia => (
-            <TabsTrigger 
-              key={dia.valor} 
-              value={dia.valor}
-              className="data-[state=active]:bg-fatec-green data-[state=active]:text-white"
-            >
-              <div>
-                <div className="font-medium">{dia.label}</div>
-                <div className="text-xs opacity-80">{dia.data}</div>
-              </div>
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        
+        <div className="overflow-x-auto">
+          <TabsList className="flex md:grid md:grid-cols-5 gap-2 w-max md:w-full min-w-full">
+            {diasSemana.map(dia => (
+              <TabsTrigger
+                key={dia.valor}
+                value={dia.valor}
+                className="flex flex-col items-center justify-center px-4 py-0 text-sm font-medium data-[state=active]:bg-fatec-green data-[state=active]:text-white whitespace-nowrap"
+              >
+                <span>{dia.label}</span>
+                <span className="text-xs opacity-80">{dia.data}</span>
+              </TabsTrigger>
+            ))}
+          </TabsList>
+        </div>
+
         {diasSemana.map(dia => (
           <TabsContent key={dia.valor} value={dia.valor} className="space-y-6">
             <h3 className="text-xl font-semibold text-fatec-green mb-4">
