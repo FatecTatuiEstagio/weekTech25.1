@@ -11,7 +11,7 @@ export function Edition() {
                 srcImage={"/edition/2025/1.png"} 
               />
               <CardEdition 
-                linkSite={"https://week-tech2025.vercel.app/"} 
+                linkSite={"https://week-tech.vercel.app/"} 
                 srcImage={"/edition/2024/2.png"} 
               />
             </div>
