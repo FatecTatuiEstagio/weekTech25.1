@@ -1,73 +1,50 @@
-# Welcome to your Lovable project
+# Fatec Tech Week Site
 
-## Project info
+Este projeto é um site desenvolvido para a Fatec Tatuí. A Fatec Tech Week, um evento voltado para tecnologia, inovação e networking entre estudantes, profissionais e empresas do setor. O objetivo do site é divulgar informações sobre o evento, programação, palestrantes, inscrições e outras novidades relacionadas à semana tecnológica da Fatec.
 
-**URL**: https://lovable.dev/projects/db8910b6-bdd8-4fe0-8d78-773c1a35bdd0
+## Tecnologias Utilizadas
 
-## How can I edit this code?
+- Framework: Vite
 
-There are several ways of editing your application.
-
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/db8910b6-bdd8-4fe0-8d78-773c1a35bdd0) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
+### Bibliotecas
 - React
-- shadcn-ui
+- TypeScript
 - Tailwind CSS
+- Radix UI
+- TanStack Query
+- Lucide React
 
-## How can I deploy this project?
+## Instalação
 
-Simply open [Lovable](https://lovable.dev/projects/db8910b6-bdd8-4fe0-8d78-773c1a35bdd0) and click on Share -> Publish.
+### Usando Docker Compose
 
-## Can I connect a custom domain to my Lovable project?
+1. Certifique-se de ter o Docker e o Docker Compose instalados em sua máquina.
 
-Yes, you can!
+2. Execute o comando abaixo para subir o serviço:
+    ```sh
+    docker compose up --build
+    ```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+O site estará disponível em [http://localhost:4173](http://localhost:4173).
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+### Usando Docker (manual)
+
+1. Construa a imagem Docker:
+    ```sh
+    docker build -t fatec-tech-week-site .
+    ```
+
+2. Execute o container:
+    ```sh
+    docker run -p 4173:4173 fatec-tech-week-site
+    ```
+
+O site estará disponível em [http://localhost:4173](http://localhost:4173).
+
+## Contribuição
+
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para discutir melhorias e correções.
+
+## Licença
+
+Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
