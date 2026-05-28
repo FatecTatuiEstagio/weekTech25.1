@@ -7,7 +7,8 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 0, 0%, 6.67%;
+    
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -67,8 +68,8 @@
   background-image:
     linear-gradient(
       to bottom,
-      rgb(178 0 0 / 82%),
-      rgb(90 0 0 / 82%)
+      rgba(22, 7, 7, 0.82),
+      rgba(45, 2, 2, 0.82)
     ),
     url('https://images.unsplash.com/photo-1540575467063-178a50c2df87?ixlib=rb-4.0.3&auto=format&fit=crop&w=1600&q=80');
 
