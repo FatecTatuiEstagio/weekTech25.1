@@ -1,42 +1,81 @@
 import useEmblaCarousel from 'embla-carousel-react';
 import { Card, CardContent } from '@/components/ui/card';
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import slides from '@/data/slide';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+
+import {
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react';
 
 export default function Carousel2() {
-  const [outerRef] = useEmblaCarousel({ loop: false });
+  const [outerRef] = useEmblaCarousel({
+    loop: true,
+    align: 'start',
+  });
 
   return (
-    <section className="bg-white py-10">
+    <section className="bg-white py-14">
       <div className="container mx-auto px-6 md:px-8">
-        <h2 className="text-2xl font-bold text-center mb-6 text-gray-900">Destaques do Evento</h2>
+        <div className="mb-10 text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Destaques do Evento
+          </h2>
 
-        {/* Carrossel de cards */}
-        <div className="overflow-hidden" ref={outerRef}>
-          <div className="flex gap-4">
+          <p className="mt-3 text-gray-600">
+            Confira alguns momentos e atividades da Semana de Tecnologia.
+          </p>
+        </div>
+
+        <div
+          className="overflow-hidden"
+          ref={outerRef}
+        >
+          <div className="flex gap-6">
             {slides.map((exp, index) => (
               <Card
                 key={index.toString()}
-                className="min-w-full sm:min-w-[70%] md:min-w-[50%] lg:min-w-[33%] transition-transform"
+                className="
+                  min-w-full
+                  sm:min-w-[75%]
+                  md:min-w-[55%]
+                  lg:min-w-[38%]
+                  overflow-hidden
+                  border-0
+                  shadow-card
+                  rounded-2xl
+                "
               >
                 <CardContent className="p-0">
-                  {/* Imagem única ou carrossel interno */}
                   {exp.image.length > 1 ? (
-                    <InnerCarousel images={exp.image} title={exp.title} />
+                    <InnerCarousel
+                      images={exp.image}
+                      title={exp.title}
+                    />
                   ) : (
                     <img
                       loading="lazy"
                       src={exp.image[0]}
                       alt={exp.title}
-                      className="w-full h-64 object-cover rounded-t-xl select-none"
+                      className="
+                        h-64
+                        w-full
+                        object-cover
+                        select-none
+                        
+                      "
                     />
                   )}
 
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold select-none">{exp.title}</h3>
-                    <p className="text-sm text-gray-600 select-none">{exp.description}</p>
+                  <div className="p-5">
+                    <h3 className="text-xl font-semibold text-gray-900 text-justify">
+                      {exp.title}
+                    </h3>
+
+                    <p className="mt-2 text-sm leading-relaxed text-gray-600 text-justify">
+                      {exp.description}
+                    </p>
                   </div>
                 </CardContent>
               </Card>
@@ -51,49 +90,83 @@ export default function Carousel2() {
 function InnerCarousel({ images, title }) {
   const [ref, embla] = useEmblaCarousel({
     loop: true,
-    // dragFree: false,
   });
 
-  // useEffect(() => {
-  //   if (embla) {
-  //     embla.off(eventName: string, callback: Function)
-  //   }
-  // }, [embla]);
+  const scrollPrev = useCallback(() => {
+    embla?.scrollPrev();
+  }, [embla]);
 
-  const scrollPrev = useCallback(() => embla?.scrollPrev(), [embla]);
-  const scrollNext = useCallback(() => embla?.scrollNext(), [embla]);
+  const scrollNext = useCallback(() => {
+    embla?.scrollNext();
+  }, [embla]);
 
   return (
     <div className="relative">
-      {/* Botões */}
       {images.length > 1 && (
         <>
           <button
-            type='submit'
+            type="button"
             onClick={scrollPrev}
-            className="absolute top-1/2 left-2 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+            className="
+              absolute
+              left-3
+              top-1/2
+              z-10
+              -translate-y-1/2
+              rounded-full
+              bg-white/90
+              p-2
+              shadow-md
+              backdrop-blur-sm
+              transition
+              hover:bg-red-50
+            "
           >
-            <ChevronLeft className="w-5 h-5 text-gray-700" />
+            <ChevronLeft className="h-5 w-5 text-[#b20000]" />
           </button>
+
           <button
-            type='submit'
+            type="button"
             onClick={scrollNext}
-            className="absolute top-1/2 right-2 -translate-y-1/2 bg-white p-2 rounded-full shadow hover:bg-gray-100 z-10"
+            className="
+              absolute
+              right-3
+              top-1/2
+              z-10
+              -translate-y-1/2
+              rounded-full
+              bg-white/90
+              p-2
+              shadow-xl
+              backdrop-blur-sm
+              transition
+              hover:bg-red-50
+            "
           >
-            <ChevronRight className="w-5 h-5 text-gray-700" />
+            <ChevronRight className="h-5 w-5 text-[#b20000]" />
           </button>
         </>
       )}
 
-      {/* Slides */}
-      <div className="overflow-hidden rounded-t-xl pointer-events-none" ref={ref}>
-        <div className="flex will-change-transform select-none">
+      <div
+        className="overflow-hidden"
+        ref={ref}
+      >
+        <div className="flex select-none will-change-transform">
           {images.map((src, index) => (
-            <div key={index.toString()} className="flex-[0_0_100%]">
+            <div
+              key={index.toString()}
+              className="flex-[0_0_100%]"
+            >
               <img
                 src={src}
                 alt={`${title} - Slide ${index + 1}`}
-                className="w-full h-64 object-cover select-none"
+                className="
+                  h-64
+                  w-full
+                  object-cover
+                  select-none
+                "
                 loading="lazy"
                 draggable={false}
               />

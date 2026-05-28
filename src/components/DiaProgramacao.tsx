@@ -1,6 +1,13 @@
+import {
+  Tabs,
+  TabsContent,
+  TabsList,
+  TabsTrigger,
+} from "@/components/ui/tabs";
 
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import PalestraCard, { type PalestraProps } from './PalestraCard';
+import PalestraCard, {
+  type PalestraProps,
+} from './PalestraCard';
 
 interface DiaProgramacaoProps {
   dia: string;
@@ -9,14 +16,37 @@ interface DiaProgramacaoProps {
 }
 
 const diasSemana = [
-  { valor: "segunda", label: "Segunda-feira", data: "12 de Maio" },
-  { valor: "terca", label: "Terça-feira", data: "13 de Maio" },
-  { valor: "quarta", label: "Quarta-feira", data: "14 de Maio" },
-  { valor: "quinta", label: "Quinta-feira", data: "15 de Maio" },
-  { valor: "sexta", label: "Sexta-feira", data: "16 de Maio" }
+  {
+    valor: "segunda",
+    label: "Segunda-feira",
+    data: "12 de Maio"
+  },
+  {
+    valor: "terca",
+    label: "Terça-feira",
+    data: "13 de Maio"
+  },
+  {
+    valor: "quarta",
+    label: "Quarta-feira",
+    data: "14 de Maio"
+  },
+  {
+    valor: "quinta",
+    label: "Quinta-feira",
+    data: "15 de Maio"
+  },
+  {
+    valor: "sexta",
+    label: "Sexta-feira",
+    data: "16 de Maio"
+  }
 ];
 
-// Dados temporários para cada dia da semana
+/* ===========================
+   Dados temporários
+=========================== */
+
 const dadosDiarios = {
   segunda: [
     {
@@ -31,6 +61,7 @@ const dadosDiarios = {
       descricao: "Empresa: Point Media",
       local: "Local: Auditório 1 - Prédio 2"
     },
+
     {
       palestrante: "Marcelo Marques e William Galvão",
       foto: [
@@ -43,6 +74,7 @@ const dadosDiarios = {
       descricao: "Empresa: Point Media",
       local: "Local: Auditório 1 - Prédio 2"
     },
+
     {
       palestrante: "Marcelo Marques e William Galvão",
       foto: [
@@ -56,6 +88,7 @@ const dadosDiarios = {
       local: "Local: Auditório 1 - Prédio 2"
     },
   ],
+
   terca: [
     {
       palestrante: "2° Colóquio de Automação Industrial",
@@ -66,15 +99,18 @@ const dadosDiarios = {
       descricao: "Empresa: Lincoln Eletric",
       local: "Local: Auditório 1 - Prédio 2"
     },
+
     {
       palestrante: "Paulo Assis",
-      foto: "./palestrantes/PauloAssis.jpg",        
+      foto: "./palestrantes/PauloAssis.jpg",
       horario: "14h00",
       curso: "Produção Fonográfica",
       tema: "Mixando com fones: uma abordagem binaural",
-      descricao: "Artista sonoro, produtor e engenheiro de mixagem e masterização\n Mestre em Artes pela Escola de Comunicação e Artes da USP",
+      descricao:
+        "Artista sonoro, produtor e engenheiro de mixagem e masterização.",
       local: "Local: Estúdio"
     },
+
     {
       palestrante: "2° Colóquio de Automação Industrial",
       foto: "./palestrantes/automacaoIndustrial.jpg",
@@ -85,85 +121,41 @@ const dadosDiarios = {
       local: "Local: Auditório 1 - Prédio 2"
     },
   ],
+
   quarta: [
     {
       palestrante: "Hélio Silva",
       foto: "./palestrantes/HelioSilva.jpg",
       horario: "08h00",
       curso: "Manutenção Industrial",
-      tema: "Soldagem em realidade virtual A revolução do Treinamento Técnico",
+      tema: "Soldagem em realidade virtual",
       descricao: "Empresa: Lincoln Eletric",
       local: "Local: Auditório 1 - Prédio 2"
     },
-    {
-      palestrante: "Fabiana Lian",
-      foto: "./palestrantes/FabianaLian.jpg",
-      horario: "14h00",
-      curso: "Automação Industrial",
-      tema: "“Enquanto Você Toca”, bate-papo com autora do Livro",
-      descricao: "Cantora do grupo Mawaca e atuou em muitos projetos de música eletrônica, jazz e contemporânea",
-      local: "Local: Estúdio"
-    },
-    {
-      palestrante: "Maise Rezende e Rosângela Araújo",
-      foto: [
-        "./palestrantes/MaiseRezende.jpg",
-        "./palestrantes/RosangelaAraujo.jpg",
-      ],
-      horario: "14h00",
-      curso: "Processos Gerenciais",
-      tema: "Equilíbrio e Carreira: A construção do Seu Melhor Perfil",
-      descricao: `Maise: Parceira Comercial de Recursos Humnanos (HRBP) na Point Media.
-                  Rosângela: Professora e coordenadora na UNISO e coordenadora na Fatec Tatuí.`,
-      local: "Local: Auditório 1 - Prédio 2"
-    },
-    {
-      palestrante: "Eduardo Menezes",
-      foto: "./palestrantes/EduardoMenezes.png",
-      horario: "19h00",
-      curso: "Manutenção Industrial",
-      tema: "Planejamento da Manutenção Programada - Linha amarela da JCB",
-      descricao: "Empresa: JCB",
-      local: "Local: Auditório 1 - Prédio 2"
-    }
   ],
+
   quinta: [
     {
       palestrante: "Alexandre Azevedo",
       foto: "./palestrantes/AlexandreAzevedo.jpg",
       horario: "14h00",
       curso: "Produção Fonográfica",
-      tema: "Soldagem em realidade virtual A revolução do Treinamento Técnico",
-      descricao: "Lançou o primeiro livro sobre negócios de música do Brasil, em parceria com o Doutor em Direito, Nichollas Alem, com o título:\n40 Formas de Ganhar Dinheiro na Música: um guia descomplicado para artistas e bandas.",
+      tema: "Negócios da Música",
+      descricao:
+        "Autor do primeiro livro sobre negócios da música do Brasil.",
       local: "Estúdio"
     },
-    {
-      palestrante: "Weliton do Carmo Rodrigues",
-      foto: "./palestrantes/Wellinton.jpg",
-      horario: "14h30",
-      curso: "Gestão Empresarial",
-      tema: "Incorporação de IA nas atividades do dia-a-dia",
-      descricao: "Pesquisador nas áreas de  Inteligência Artificial - FIT Flextronic Instituto de Tecnologia ",
-      local: "Local: Auditório 1 - Prédio 2"
-    },
-    {
-      palestrante: "Marina Lima",
-      foto: "./palestrantes/Jane Piantoni.jpg",
-      horario: "20h00",
-      curso: "Gestão Empresarial",
-      tema: "IA e os desafios futuros para o mundo corporativo",
-      descricao: "Pesquisadora nas áreas de  Inteligência Artificial - FIT Flextronic",
-      local: "Local: Auditório 1 - Prédio 2"
-    }
   ],
+
   sexta: [
     {
       palestrante: "Point Media",
       foto: "./palestrantes/gti.png",
       horario: "8h - 19h",
-      curso: "Gestão da Tecnologia da Informação & Análise e Desenvolvimento de Sistemas",
-      tema: "Finalização do Ideathon (GTI e ADS)",
-      descricao: " ",
+      curso:
+        "GTI & ADS",
+      tema: "Finalização do Ideathon",
+      descricao: "Encerramento das atividades.",
       local: "Local: Auditório 1 - Prédio 2"
     },
   ]
@@ -171,39 +163,92 @@ const dadosDiarios = {
 
 const DiaProgramacao = () => {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">Programação do Evento</h2>
-      
-      <Tabs defaultValue="segunda" className="w-full">
-        <div className="overflow-x-auto">
-          <TabsList className="flex md:grid md:grid-cols-5 gap-2 w-max md:w-full min-w-full">
-            {diasSemana.map(dia => (
-              <TabsTrigger
-                key={dia.valor}
-                value={dia.valor}
-                className="flex flex-col items-center justify-center px-4 py-0 text-sm font-medium data-[state=active]:bg-fatec-green data-[state=active]:text-white whitespace-nowrap"
-              >
-                <span>{dia.label}</span>
-                <span className="text-xs opacity-80">{dia.data}</span>
-              </TabsTrigger>
-            ))}
-          </TabsList>
+    <section className="bg-gray-50 py-16">
+      <div className="container mx-auto px-6 md:px-8">
+        <div className="mb-10 text-left">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
+            Programação do Evento
+          </h2>
+
+          <p className="mt-3 text-gray-600">
+            Confira as palestras e atividades de cada dia da Semana de Tecnologia.
+          </p>
         </div>
 
-        {diasSemana.map(dia => (
-          <TabsContent key={dia.valor} value={dia.valor} className="space-y-6">
-            <h3 className="text-xl font-semibold text-fatec-green mb-4">
-              {dia.label} - {dia.data}
-            </h3>
-            
-            {dadosDiarios[dia.valor as keyof typeof dadosDiarios].map((palestra, index) => (
-              // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-                <PalestraCard key={index} {...palestra} />
+        <Tabs
+          defaultValue="segunda"
+          className="w-full"
+        >
+          <div className=" pb-2">
+            <TabsList
+              className="
+                flex
+                w-max
+                min-w-full
+                gap-2
+                bg-transparent
+                md:grid
+                md:grid-cols-5
+              "
+            >
+              {diasSemana.map((dia) => (
+                <TabsTrigger
+                  key={dia.valor}
+                  value={dia.valor}
+                  className="
+                    flex
+                    flex-col
+                    items-center
+                    justify-center
+                    rounded-xl
+                    border
+                    border-gray-200
+                    bg-white
+                    px-5
+                    py-3
+                    text-sm
+                    font-medium
+                    text-gray-700
+                    transition-all
+
+                    data-[state=active]:border-[#b20000]
+                    data-[state=active]:bg-[#b20000]
+                    data-[state=active]:text-white
+                  "
+                >
+                  <span>{dia.label}</span>
+
+                  <span className="text-xs opacity-80">
+                    {dia.data}
+                  </span>
+                </TabsTrigger>
+              ))}
+            </TabsList>
+          </div>
+
+          {diasSemana.map((dia) => (
+            <TabsContent
+              key={dia.valor}
+              value={dia.valor}
+              className="mt-8 space-y-6"
+            >
+              <h3 className="text-2xl font-bold text-[#b20000]">
+                {dia.label} - {dia.data}
+              </h3>
+
+              {dadosDiarios[
+                dia.valor as keyof typeof dadosDiarios
+              ].map((palestra, index) => (
+                <PalestraCard
+                  key={index}
+                  {...palestra}
+                />
+              ))}
+            </TabsContent>
           ))}
-          </TabsContent>
-        ))}
-      </Tabs>
-    </div>
+        </Tabs>
+      </div>
+    </section>
   );
 };
 

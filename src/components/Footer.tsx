@@ -1,40 +1,88 @@
 
 import { Link } from 'react-router-dom';
 
+import LogoFatec from "./imgs/logo-fatec.png"
+import LogoCps from "./imgs/logo-branco-cps.png"
+
 const Footer = () => {
+
+  const currentYear = new Date().getFullYear();
+
+  const links = [
+    { label: "Início", href: "#inicio" },
+    { label: "Sobre o Evento", href: "#sobre" },
+    { label: "Programação", href: "#programacao" },
+    { label: "Edições Anteriores", href: "#edicoes" },
+  ]
+
   return (
-    <footer className="bg-fatec-green text-white py-10">
-      <div className="container mx-auto px-6 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-foreground text-background py-12">
+    <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid gap-10 md:grid-cols-3 mb-10">
+          {/* Logo + descrição */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">4ª Semana de Tecnologia</h3>
-            <p className="text-sm mb-2">Fatec Tatuí</p>
-            <p className="text-sm">12 a 16 de Maio de 2025</p>
+            <div className="flex items-center gap-4 mb-4">
+              <img
+                src={LogoFatec}
+                alt="Fatec Tatuí"
+                className="h-12 w-auto"
+              />
+              <img
+                src={LogoCps}
+                alt="Centro Paula Souza"
+                className="h-10 w-auto"
+              />
+            </div>
+
+            <p className="text-sm text-background/70 leading-relaxed">
+              Faculdade de Tecnologia de Tatuí
+              <br />
+              Centro Paula Souza
+            </p>
           </div>
-          
+
+          {/* Links */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Navegação</h3>
-            <ul className="space-y-2">
-              <li><Link to="/" className="text-sm hover:underline">Home</Link></li>
-              <li><Link to="/programacao" className="text-sm hover:underline">Programação</Link></li>
-              <li><Link to="/contato" className="text-sm hover:underline">Contato</Link></li>
+            <h4 className="font-semibold mb-4">Links Rápidos</h4>
+            <ul className="space-y-2 text-sm text-background/70">
+              {links.map((item) => (
+                <li key={item.href}>
+                  <a
+                    href={item.href}
+                    className="hover:text-background transition-colors"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
-          
+
+          {/* Contato */}
           <div>
-            <h3 className="text-lg font-semibold mb-4">Endereço</h3>
-            <p className="text-sm mb-2">Rodovia Mário Batista Mori, 971</p>
-            <p className="text-sm mb-2">Jardim Aeroporto - Tatuí/SP</p>
-            <p className="text-sm">CEP 18280-000</p>
+            <h4 className="font-semibold mb-4">Contato</h4>
+            <ul className="space-y-2 text-sm text-background/70">
+              <li>Rodovia Mário Batista Mori, 971</li>
+              <li>Tatuí/SP - CEP 18280-000</li>
+              <li>(15) 3205-7782</li>
+              <li>f132.contato@fatec.sp.gov.br</li>
+            </ul>
           </div>
         </div>
-        
-        <div className="border-t border-white/20 mt-8 pt-6 text-sm text-center">
-          <p>&copy; {new Date().getFullYear()} Fatec Tatuí. Todos os direitos reservados.</p>
+
+        {/* Bottom */}
+        <div className="pt-6 border-t border-background/20 text-center text-sm text-background/60">
+          <p>
+            © {currentYear} Fatec Tatuí - Centro Paula Souza. Todos os direitos reservados.
+          </p>
         </div>
       </div>
-    </footer>
+    </div>
+  </footer>
   );
 };
 
 export default Footer;
+
+

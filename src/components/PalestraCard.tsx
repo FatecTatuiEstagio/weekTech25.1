@@ -1,8 +1,15 @@
 import { Card, CardContent } from "@/components/ui/card";
+
 import useEmblaCarousel from "embla-carousel-react";
+
 import { useCallback } from "react";
+
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
+import {
+  ChevronLeft,
+  ChevronRight,
+} from "lucide-react";
 
 export interface PalestraProps {
   palestrante: string;
@@ -14,71 +21,217 @@ export interface PalestraProps {
   local: string | undefined;
 }
 
-const PalestraCard = ({ palestrante, foto, horario, curso, tema, descricao, local }: PalestraProps) => {
+const PalestraCard = ({
+  palestrante,
+  foto,
+  horario,
+  curso,
+  tema,
+  descricao,
+  local,
+}: PalestraProps) => {
   const isMultiple = Array.isArray(foto);
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
 
-  const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
+  const [emblaRef, emblaApi] =
+    useEmblaCarousel({
+      loop: true,
+    });
+
+  const scrollPrev = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+
+  const scrollNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
 
   return (
-    <Card className="shadow-card overflow-hidden">
+    <Card
+      className="
+        overflow-hidden
+        border-0
+        shadow-card
+        rounded-xl
+      "
+    >
       <CardContent className="p-0">
         <div className="flex flex-col md:flex-row">
-          <div className="relative md:w-1/3 h-64 md:h-auto">
+          {/* Imagens */}
+          <div
+            className="
+              relative
+              h-48
+              md:h-auto
+              md:w-[220px]
+              md:min-w-[220px]
+            "
+          >
             {isMultiple ? (
               <div className="relative h-full">
-                <div className="overflow-hidden h-full" ref={emblaRef}>
+                <div
+                  className="overflow-hidden h-full"
+                  ref={emblaRef}
+                >
                   <div className="flex h-full">
-                    {(foto as string[]).map((src, index) => (
-                      <img
-                        key={index.toString()}
-                        src={src}
-                        alt={`Foto do palestrante ${index + 1}`}
-                        className="min-w-full h-full object-cover"
-                      />
-                    ))}
+                    {(foto as string[]).map(
+                      (src, index) => (
+                        <img
+                          key={index.toString()}
+                          src={src}
+                          alt={`Foto do palestrante ${index + 1}`}
+                          className="
+                            min-w-full
+                            h-full
+                            object-cover
+                          "
+                        />
+                      )
+                    )}
                   </div>
                 </div>
+
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={scrollPrev}
-                  className="absolute top-1/2 left-2 -translate-y-1/2 z-10 bg-white/80"
+                  className="
+                    absolute
+                    left-2
+                    top-1/2
+                    z-10
+                    -translate-y-1/2
+                    rounded-full
+                    bg-white/90
+                    shadow-md
+                    hover:bg-red-50
+                    h-7 w-7
+                  "
                 >
-                  <ChevronLeft className="w-5 h-5" />
+                  <ChevronLeft className="h-4 w-4 text-[#b20000]" />
                 </Button>
+
                 <Button
                   variant="ghost"
                   size="icon"
                   onClick={scrollNext}
-                  className="absolute top-1/2 right-2 -translate-y-1/2 z-10 bg-white/80"
+                  className="
+                    absolute
+                    right-2
+                    top-1/2
+                    z-10
+                    -translate-y-1/2
+                    rounded-full
+                    bg-white/90
+                    shadow-md
+                    hover:bg-red-50
+                    h-7 w-7
+                  "
                 >
-                  <ChevronRight className="w-5 h-5" />
+                  <ChevronRight className="h-4 w-4 text-[#b20000]" />
                 </Button>
               </div>
             ) : (
               <img
                 src={foto as string}
                 alt={`${palestrante} - Palestrante`}
-                className="w-full h-full object-cover"
+                className="
+                  h-full
+                  w-full
+                  object-cover
+                "
               />
             )}
           </div>
 
-          <div className="md:w-2/3 p-6">
-            <div className="flex items-center justify-between mb-4">
-              <span className="bg-fatec-green text-white text-sm font-medium px-3 py-1 rounded">
+          {/* Conteúdo */}
+          <div className="flex-1 p-4 md:p-5">
+            <div
+              className="
+                mb-3
+                flex
+                flex-col
+                gap-2
+                sm:flex-row
+                sm:items-center
+                sm:justify-between
+              "
+            >
+              <span
+                className="
+                  w-fit
+                  rounded-full
+                  bg-[#b20000]
+                  px-3
+                  py-1
+                  text-xs
+                  font-semibold
+                  text-white
+                "
+              >
                 {horario}
               </span>
-              <span className="bg-fatec-lightGray font-bold text-fatec-gray text-sm px-3 py-1 rounded">
+
+              <span
+                className="
+                  w-fit
+                  rounded-full
+                  bg-red-50
+                  px-3
+                  py-1
+                  text-xs
+                  font-medium
+                  text-[#b20000]
+                "
+              >
                 {curso}
               </span>
             </div>
-            <h3 className="text-xl font-bold text-gray-900 mb-1">{palestrante}</h3>
-            <h4 className="text-lg font-semibold text-fatec-green mb-2">{tema}</h4>
-            <p className="text-gray-600 text-sm whitespace-pre-line mb-2">{descricao}</p>
-            <p className="text-gray-600 text-sm">{local}</p>
+
+            <h3
+              className="
+                text-lg
+                font-bold
+                text-gray-900
+              "
+            >
+              {palestrante}
+            </h3>
+
+            <h4
+              className="
+                mt-1
+                text-sm
+                font-semibold
+                text-[#b20000]
+              "
+            >
+              {tema}
+            </h4>
+
+            <p
+              className="
+                mt-3
+                whitespace-pre-line
+                text-xs
+                leading-relaxed
+                text-gray-600
+              "
+            >
+              {descricao}
+            </p>
+
+            {local && (
+              <p
+                className="
+                  mt-3
+                  text-xs
+                  font-medium
+                  text-gray-700
+                "
+              >
+                {local}
+              </p>
+            )}
           </div>
         </div>
       </CardContent>
