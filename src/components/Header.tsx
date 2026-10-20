@@ -39,7 +39,7 @@ const Header = () => {
 
             <div className="flex flex-col leading-tight">
               <span className="text-lg font-bold text-white md:text-xl">
-                WeekTech
+                Semana da Tecnologia
               </span>
               <span className="text-xs text-red-100 md:text-sm">
                 Fatec Tatuí

@@ -2,7 +2,8 @@
 import { Link } from 'react-router-dom';
 
 import LogoFatec from "./imgs/logo-fatec.png"
-import LogoCps from "./imgs/logo-branco-cps.png"
+import LogoSp from "./imgs/Icon_governoSP.png"
+import LogoCPS from "./imgs/Icon_cps.png"
 
 const Footer = () => {
 
@@ -28,9 +29,10 @@ const Footer = () => {
                 alt="Fatec Tatuí"
                 className="h-12 w-auto"
               />
+              <img src={LogoCPS} alt="Centro Paula Souza" className="h-10 w-auto" />
               <img
-                src={LogoCps}
-                alt="Centro Paula Souza"
+                src={LogoSp}
+                alt="Estado de São Paulo"
                 className="h-10 w-auto"
               />
             </div>
@@ -66,7 +68,7 @@ const Footer = () => {
               <li>Rodovia Mário Batista Mori, 971</li>
               <li>Tatuí/SP - CEP 18280-000</li>
               <li>(15) 3205-7782</li>
-              <li>f132.contato@fatec.sp.gov.br</li>
+              <li>f132.secdir@fatectatui.edu.br</li>
             </ul>
           </div>
         </div>
@@ -84,5 +86,4 @@ const Footer = () => {
 };
 
 export default Footer;
-
 
